@@ -15,16 +15,14 @@ class StreamList extends React.Component {
           <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
-          <button className="ui button negative">
-            Delete
-          </button>
+          <button className="ui button negative">Delete</button>
         </div>
       );
     }
   }
 
   renderList() {
-    return this.props.streams.map((stream) => {
+    return this.props.streams.map(stream => {
       return (
         <div className="item" key={stream.id}>
           {this.renderAdmin(stream)}
@@ -45,7 +43,7 @@ class StreamList extends React.Component {
           <Link to="/streams/new" className="ui button primary">
             Create stream
           </Link>
-        </ div>
+        </div>
       );
     }
   }
@@ -61,7 +59,7 @@ class StreamList extends React.Component {
   }
 }
 
-const mapsStateToProps = (state) => {
+const mapsStateToProps = state => {
   return {
     streams: Object.values(state.streams),
     currentUserId: state.auth.userId,
